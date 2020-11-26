@@ -1,0 +1,103 @@
+*{margin: 0; padding: 0; box-sizing: border-box}
+ul, ol, li{list-style: none}
+a{text-decoration: none;}
+
+/*------------ 공통 css ------------*/
+.content{width: 100%; padding: 150px 0px}
+.content .inner{width: 1180px; margin: 0 auto;}
+.content .inner::after{content: ''; clear: both; display: block;}
+
+.content .title{margin-bottom: 20px; font: bold 24px '맑은 고딕'; color: #444; text-align: center; text-transform: uppercase}
+.content .txt{margin-bottom: 40px; font: 14px '맑은 고딕'; color: #777; text-align: center;}
+
+@media screen and (max-width:1200px){
+    .content{padding: 150px 40px}
+    .content .inner{width: 100%;}
+}
+@media screen and (max-width:980px){
+    .content{padding: 120px 40px}
+}
+@media screen and (max-width:768px){
+    .content{padding: 80px 20px}
+}
+@media screen and (max-width:640px){
+    .content{padding: 60px 20px}
+}
+@media screen and (max-width:480px){}
+
+/*------------ 서비스 ------------*/
+
+
+#con1 .txt{margin-bottom: 100px;}
+#con1 .box{position: relative; float: left; width: 376px; margin-right: 25px; padding: 25px; background-color:#f7f1e8; border-radius: 5px; transition: 0.3s}    
+#con1 .box:last-of-type{margin-right: 0}
+
+#con1 .box .pic{position: absolute; left: 50%; top: 0; transform: translate(-50%, -50%); width: 100px; height: 100px; margin: 0 auto; border-radius: 100%; box-shadow: 0 0 0 10px white;  overflow: hidden; transition: 0.3s}   
+#con1 .box .pic > img{display: block; width: 100%;}   
+#con1 .box .info{margin-top: 60px; text-align: center; }   
+#con1 .box .info .sub_title{margin-bottom: 10px; font: bold 18px '맑은 고딕'; color: #444; text-transform: uppercase;}   
+#con1 .box .info .sub_txt{font: 14px '맑은 고딕'; color: #777; text-align: justify; text-indent: 10px;}   
+#con1 .box .info .sub_sns>li{display: inline-block; margin: 30px 10px 10px;}   
+
+#con1 .box:hover{box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2); background-color: #d9c8ae; }
+#con1 .box:hover .pic{top: -15px;}
+
+@media screen and (max-width:1200px){
+    #con1 .box{width: 31.333%; margin-right: 3%; padding: 20px; }    
+    #con1 .box:last-of-type{margin-right: 0}
+}
+@media screen and (max-width:980px){}
+@media screen and (max-width:768px){
+    #con1 .box{width: 48.5%; margin-bottom: 100px; }
+    #con1 .box:nth-of-type(3){margin-right: 3%}
+    #con1 .box:nth-of-type(2n){margin-right: 0%}
+}
+@media screen and (max-width:640px){}
+@media screen and (max-width:480px){
+    #con1 .box{width: 100%; }
+}
+
+ 
+#con2 .txt{margin-bottom: 100px;}
+#con2 .box{
+    position: relative; float: left; width: 376px; margin-right: 25px; padding: 25px; 
+    border-radius: 5px; transition: 0.3s;
+    background: #fff;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.2))
+    
+}    
+#con2 .box:last-of-type{margin-right: 0}
+
+#con2 .box .pic{position: absolute; left: 50%; top: 15px; transform: translate(-50%, -50%); width: 100px; height: 100px; margin: 0 auto; border-radius: 100%; box-shadow: 0 0 0 10px white;  overflow: hidden; transition: 0.3s}   
+#con2 .box .pic > img{display: block; width: 100%;}   
+#con2 .box .info{margin-top: 50px; text-align: center; }   
+#con2 .box .info .sub_title{margin-bottom: 10px; font: bold 18px '맑은 고딕'; color: #444; text-transform: uppercase;}   
+#con2 .box .info .sub_txt{font: 14px '맑은 고딕'; color: #777; text-align: justify; text-indent: 10px;}   
+#con2 .box .info .btn{
+    display: inline-block; width: 120px; margin: 20px 0 10px; background: transparent; 
+    border: 1px solid #444; border-radius: 4px; outline: 0; 
+    font: bold 13px/32px '맑은 고딕'; color: #444; text-align: center; 
+    text-transform: uppercase; cursor: pointer;
+}
+
+#con2 .box:hover .pic{top: 0px;}
+#con2 .box:hover .info .btn{background :#444; color: white;}
+
+@media screen and (max-width:1200px){
+    #con2 .box{width: 31.333%; margin-right: 3%; padding: 20px; }    
+    #con2 .box:last-of-type{margin-right: 0}
+}
+@media screen and (max-width:980px){}
+@media screen and (max-width:768px){
+    #con2 .box{width: 48.5%; margin-bottom: 100px; }
+    #con2 .box:nth-of-type(3){margin-right: 3%}
+    #con2 .box:nth-of-type(2n){margin-right: 0%}
+}
+@media screen and (max-width:640px){}
+@media screen and (max-width:480px){
+    #con2 .box{width: 100%; }
+}
+
+
+    
+    

@@ -1,0 +1,60 @@
+*{box-sizing: border-box;}
+a{text-decoration: none;}
+
+html{font-size:16px;}
+
+#best{width:100%; background-color:rgb(255,227,227); padding: 50px; }
+#best .inner{width:1180px; margin: 0 auto;}
+#best .logo{display: block;  }
+
+#best .wrap{width:100%; height:750px; overflow: hidden;}
+
+#best .tab{position: relative; width:100%; text-align: right;}
+#best .tab::after{content: ''; display: block; clear: both;}
+
+#best .tab>li{display: inline-block; text-align: left;}
+
+#best .tab>li .menu{
+    display: block; padding: 0 20px; text-align: left; cursor: pointer; color: #777;
+}
+#best .tab>li .menu span{display: inline-block; font-size: 1.25em;}
+#best .tab >li .menu:hover span,
+#best .tab >li .menu:focus span,
+#best .tab >li.on .menu span{
+    color: #f56f98;
+}
+
+#best .tab >li .pannel{position: absolute; left:0; top:100px; width:100%;}
+#best .tab >li .pannel::after{content: ''; display: block; clear: both;}
+
+#best .tab >li .pannel > div{float:left; width:100%; height:360px;}
+
+#best .tab >li .pannel .pic{opacity: 0; transform: translateY(-100%);}
+#best .tab >li .pannel .pic img{display: block; position: absolute; top:20%; left:50%; transform: translate(-50%,-30%);}
+
+#best .tab >li .pannel .msg{text-align: center;}
+#best .tab >li .pannel .msg h3{
+    color: #cc9b3b; font-size:0.5em;  margin-bottom: 0.635em;
+    opacity: 0; transform: translateY(100%);
+}
+#best .tab >li .pannel .msg h2{
+    margin-bottom: 0.635em; font-size:3em;  color: #444; font-weight: 300;
+    opacity: 0; transform: translateY(100%);
+}
+#best .tab >li .pannel .msg p{
+    margin-bottom: 3em; font-size:1em; color: #948780; font-weight: 300;
+    opacity: 0; transform: translateY(100%);
+}
+
+#best .tab >li .pannel .msg button{
+    background-color: #f56f98; outline: none; border:none;
+    width:178px; height:3.5em; color: #fff; border-radius: 30px;
+    opacity: 0; transform: translateY(100%);
+}
+
+#best .tab >li.on .pannel .pic{opacity: 1; transform: translateY(0%); transition: 0.5s 0s;}
+#best .tab >li.on .pannel .msg h3{opacity: 1; transform: translateY(0%); transition: 0.5s 0s;}
+#best .tab >li.on .pannel .msg h2{opacity: 1; transform: translateY(0%); transition: 0.5s 0s;}
+#best .tab >li.on .pannel .msg p{opacity: 1; transform: translateY(0%); transition: 0.5s 0.2s;}
+#best .tab >li.on .pannel .msg button{opacity: 1; transform: translateY(0%); transition: 0.5s 0.4s;}
+

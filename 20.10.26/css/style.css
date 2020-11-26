@@ -1,0 +1,271 @@
+*{box-sizing: border-box;}
+a{text-decoration: none; color: #444; }
+
+
+/*--------header pc버전------------------------------------------------------------------------------*/
+#header{width:100%; height:100px; position: relative; }
+#header .inner{width:1180px; margin:0 auto;}
+#header .inner::after{content:''; clear: both; display: block;}
+
+#header .bgGnb{
+    display:none; position: absolute; top:100px; left:0;
+    background-color: rgba(0,0,0,0.7); width:100%; height:220px;
+}
+#header .bgGnb .inner{padding: 32px 0;}
+#header .bgGnb .pic{ float:right; width:300px;}
+#header .bgGnb .pic img{width:100%;}
+
+#header .logo{float:left; margin-top:10px;}
+#header .logo a{display: block;}
+
+#header .gnb_wrap{float:left;}
+
+#gnb{margin-top:40px; text-align: center;}
+#gnb>li{float:left; width:auto; position: relative;} /*position:relative 주는 이유는 span (en,ko)겹치기 위해*/
+#gnb>li::after{
+    content: ''; display: block; position: absolute; top:56px; left:0;
+    width:100%; height:4px; background: crimson; transform: scaleX(0); transition: 0.3s;
+}
+#gnb>li:hover::after{transform: scaleX(1);}
+
+#gnb>li>a{display: block; line-height: 60px; padding:0 30px;}
+#gnb>li>a>span{display: block; color: #444;}
+#gnb>li>a>.en{opacity: 1;}
+#gnb>li>a>.ko{opacity: 0; margin-top:-60px;}
+#gnb>li:hover>a>.en{opacity: 0;}
+#gnb>li:hover>a>.ko{opacity: 1;}
+
+#gnb>li>.submenu{display:none; margin-top: 10px;}
+#gnb>li>.submenu >li >a{display: block; width:100%;  line-height: 40px; color: #fff; font-weight: 300;}
+#gnb>li>.submenu >li:hover >a{color: crimson;}
+
+#header .icon_wrap{float:right; margin-top: 40px;}
+#header .icon_wrap>li{float:left;}
+#header .icon_wrap>li>a{display: block; line-height: 60px; padding: 0 10px;}
+#header .icon_wap>.notice>a{font-size:14px;}
+#header .icon_wrap>.facebook >a{font-size: 25px;}
+#header .icon_wrap>.instagram >a{font-size: 25px;}
+
+#header .toggle{display: none;}
+
+
+
+/*--------header 반응형------------------------------------------------------------------------------*/
+@media screen and (max-width:1200px){
+    #header .inner{width:100%; padding: 0 20px;}
+
+    #header .bgGnb{height:200px;}
+    #header .bgGnb .pic{width:250px; margin-right:20px;}
+
+    #gnb >li >a{font-size: 14px; padding:0 25px; }
+    #gnb>li>.submenu >li >a{font-size:14px; line-height: 35px;}
+
+    #header .icon_wrap > li > a{padding: 0 10px;}
+    #header .icon_wrap > .facebook > a{font-size:20px;}
+    #header .icon_wrap > .instagram > a{font-size:20px;}
+}
+
+
+@media screen and (max-width:980px){
+    #header{height:80px;}
+
+    #header .inner{width:100%; padding:0 40px;}
+
+    #header .logo{width:50px;}
+    #header .logo img{width:100%;}
+
+    #header .bgGnb{display: none;}
+
+    #header .gnb_wrap{
+        display: none; position: fixed; top:80px; right:0;
+        background-color: rgba(0,0,0,0.7); width:300px; height:100%;
+    }
+
+    #gnb > li{width:100%;}
+    #gnb > li >a{line-height: 57px; font-size: 16px;}
+    #gnb > li > a > span{color: #ffffff;}
+    #gnb>li::after{top:60px;}
+
+    #gnb> li > .submenu{display: none;}
+    #gnb> li > .submenu > li >a {background: gray;}
+
+    #header .icon_wrap{position: absolute; top:-16px; right:100px;}
+
+    #header .toggle{
+        display: block; background: none; border: none; outline: none; font-size: 32px;
+        position: absolute; top:30px ; right:40px ; cursor: pointer;
+    }
+    
+}
+
+
+/*--------content영역 pc버전------------------------------------------------------------------------------*/
+/*---------공통-----------------------------------------------*/
+#visual{width:100%; height:600px; background: #f2f4f9;}
+.content{width:100%; padding:100px 0; text-align: center; overflow: hidden; }
+.content .inner{width:1180px; margin: 0 auto;}
+.content .inner::after{content:''; clear: both; display: block;}
+.content .title{font-size:20px; font-weight: bold; color: #444; margin-bottom:25px;}
+.content .txt{font-size:16px; color: #777; margin-bottom: 25px;}
+.content .box{float:left; margin-right:25px; transition: 0.3s;}
+.content .box:last-of-type{margin-right: 0;}
+
+
+/*---------con1-----------------------------------------------*/
+#con1 .box{
+    width:368px; height:200px; background: gray;
+    transform: scaleY(100px); opacity: 0;
+}
+
+#con1 .box:nth-of-type(1){transition-delay: 0s;}
+#con1 .box:nth-of-type(2){transition-delay: 0.2s;}
+#con1 .box:nth-of-type(3){transition-delay: 0.4s;}
+
+#con1.on .box{transform: scaleY(0px); opacity: 1;}
+
+
+/*---------con2-----------------------------------------------*/
+#con2 .box{width:577px; height:400px; background: gray; opacity: 0; }
+
+#con2 .box:nth-of-type(1){transition-delay: 0s; transform: translateX(-100%); }
+#con2 .box:nth-of-type(2){transition-delay: 0.2s; transform: translateX(100%);}
+
+#con2.on .box{transform: translateX(0%); opacity: 1;}
+
+
+/*---------con3-----------------------------------------------*/
+#con3 {height:400px; background: #444;}
+#con3 .title{color: #fff;}
+#con3 .txt{color: #999;}
+#con3 .main_msg{color: #fff; font-size:100px; opacity: 0;}
+#con3.on .main_msg{opacity: 1; animation: jello 1s;}
+
+/*---------con4-----------------------------------------------*/
+#con4 .inner{transform: translateX(-100%); opacity: 0; transition:0.5s ;}
+#con4.on .inner{transform: translateX(0%); opacity: 1;}
+
+#con4 .box{width:276px; height:300px; background: gray;}
+
+
+/*---------con5-----------------------------------------------*/
+#con5 .box{width:33.333%; margin-right:0; opacity: 0;}
+#con5 .box .icon{
+    width:80px; height: 80px; border-radius: 100%; background:lightgray;
+    font-size:28px; line-height: 80px; margin: 20px auto;
+}
+#con5 .box .icon_title{font-size: 16px; margin-bottom: 10px;}
+#con5 .box .icon_txt{font-size: 14px; margin-bottom: 20px;}
+
+#con5 .box:nth-of-type(1){transition-delay:0s ;}
+#con5 .box:nth-of-type(2){transition-delay:0.1s ;}
+#con5 .box:nth-of-type(3){transition-delay:0.2s ;}
+#con5 .box:nth-of-type(4){transition-delay:0.3s ;}
+#con5 .box:nth-of-type(5){transition-delay:0.4s ;}
+#con5 .box:nth-of-type(6){transition-delay:0.5s ;}
+
+#con5.on .box{opacity: 1;}
+
+
+/*---------con6-----------------------------------------------*/
+#con6 .box{
+    width:400px; height:400px; border-radius: 100%; background:gray;
+    margin: 40px auto; float:none; opacity: 0;
+}
+
+#con6.on .box{animation: heartBeat 1s; opacity: 1;}
+
+
+/*---------con7-----------------------------------------------*/
+#con7 .box{width:276px; height:276px; margin-bottom:25px; background: gray; opacity: 0; }
+#con7 .box:nth-of-type(4n){margin-right: 0;}
+
+#con7.on .box:nth-of-type(2){animation-delay: 0.1s;}
+#con7.on .box:nth-of-type(3){animation-delay: 0.2s;}
+#con7.on .box:nth-of-type(4){animation-delay: 0.3s;}
+#con7.on .box:nth-of-type(5){animation-delay: 0.4s;}
+#con7.on .box:nth-of-type(6){animation-delay: 0.5s;}
+#con7.on .box:nth-of-type(7){animation-delay: 0.6s;}
+#con7.on .box:nth-of-type(8){animation-delay: 0.7s;}
+
+#con7.on .box{animation: flipInX 1s; transform-origin: top; opacity: 1;}
+
+
+/*--------content영역 반응형------------------------------------------------------------------------------*/
+@media screen and (max-width:1200px){
+    .content{padding:100px 20px;}
+    .content .inner{width:100%;}
+    .content .box{margin-right:3%; margin-bottom:3%;}
+
+    #con1 .box{width:31.333%;}
+    #con2 .box{width:48.5%;}
+    #con4 .box{width:22.75%;}
+    #con7 .box{width:22.75%; height:220px;}
+}
+
+@media screen and (max-width:980px){
+    #con4 .box{width:48.5%;}
+    #con4 .box:nth-of-type(2n){margin-right:0;}
+    #con2 .box{height:280px;}
+    #con7 .box{height:200px;}
+
+}
+
+@media screen and (max-width:767px){
+    #con1 .box{width:48.5%;}
+    #con1 .box:nth-of-type(2n){margin-right:0;}
+    #con3 .main_msg{font-size:80px;}
+    #con5 .box{width:50%;}
+    #con7 .box{width:48.5%; height:300px;}
+    #con7 .box:nth-of-type(2n){margin-right: 0;}
+
+}
+
+@media screen and (max-width:639px){
+    #con6 .box{width:300px; height:300px;}
+    #con3 .main_msg{font-size:50px;}
+    #con7 .box{height:210px;}
+}
+
+@media screen and (max-width:480px){
+    #con2 .box{width:100%;}
+    #con4 .box{width:100%;}
+    #con7 .box{height:180px;}
+}
+
+
+
+
+/*--------footer------------------------------------------------------------------------------*/
+#footer{background: #222; height:200px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,208 @@
+*{margin: 0; padding: 0; box-sizing: border-box}
+ul, ol, li{list-style: none}
+a{text-decoration: none;}
+
+/*------------ 공통 css ------------*/
+.content{width: 100%; padding: 150px 0px}
+.content .inner{width: 1180px; margin: 0 auto;}
+.content .inner::after{content: ''; clear: both; display: block;}
+
+.content .title{margin-bottom: 20px; font: bold 24px '맑은 고딕'; color: #444; text-align: center;}
+.content .txt{margin-bottom: 40px; font: 14px '맑은 고딕'; color: #777; text-align: center;}
+.content .btn{display: block; width: 150px; background-color: #c8a05a; border-radius: 16px;  
+    font: bold 13px/32px '맑은 고딕';color: white; text-align: center; text-transform: uppercase;
+}
+
+@media screen and (max-width:1200px){
+    .content{padding: 150px 40px}
+    .content .inner{width: 100%;}
+}
+@media screen and (max-width:980px){
+    .content{padding: 120px 40px}
+}
+@media screen and (max-width:768px){
+    .content{padding: 80px 20px}
+}
+@media screen and (max-width:640px){
+    .content{padding: 60px 20px}
+}
+@media screen and (max-width:480px){}
+
+/*------------ 서비스 ------------*/
+#service .box{
+    float: left; width: 577px; height: 160px; padding: 25px 0px; 
+    margin-right: 25px; margin-bottom: 25px; background: #f4f4f4;
+}
+#service .box:nth-of-type(2n){margin-right: 0}
+
+#service .box>div {float: left; height: 100%;}
+#service .box .pic{width: 140px; font-size: 48px; line-height: 100px; text-align: center;}
+#service .box .msg{width: calc(100% - 140px); padding: 0 30px;}
+#service .box .msg:nth-of-type(2n+1){border-right: 1px solid #ddd;}
+#service .box .msg:nth-of-type(2n){border-left: 1px solid #ddd;}
+
+#service .box .msg .sub_title{margin: 0 0 20px 0; font: bold 16px '맑은 고딕';color:#444;}
+#service .box .msg .sub_txt{margin: 0 0 20px 0;font: 14px '맑은 고딕';color:#777;}
+#service .box .msg .price{font: bold 14px '맑은 고딕';color: goldenrod;}
+    
+    
+@media screen and (max-width:1200px){
+    #service .box{ width: 48.5%; margin-right: 3%;}
+}
+@media screen and (max-width:980px){
+    
+    #service .box .pic{width: 120px;}
+    #service .box .msg{width: calc(100% - 120px); padding: 25px;}
+    #service .box .msg .sub_title{margin-bottom :15px; font-size: 15px}
+    #service .box .msg .sub_txt{margin-bottom :15px; font-size: 13px}
+    #service .box .msg .price{font-size: 13px}
+    
+}
+@media screen and (max-width:768px){
+    #service .box{padding: 20px 0px} 
+    #service .box .pic{width: 100px;}
+    #service .box .msg{width: calc(100% - 100px); padding: 0 20px;}
+}
+@media screen and (max-width:640px){
+    #service .box{height: auto; }
+    #service .box .msg .sub_title{font-size: 14px}
+    #service .box .msg .sub_txt{font-size: 14px}
+    #service .box .msg .price{font-size: 12px}
+
+    
+}
+@media screen and (max-width:480px){
+    #service .box{width: 100% }
+}
+
+ /*------------ 어바웃 ------------*/   
+#about{padding: 0; }
+#about .inner{width: 100%; background: #f2f2f2}
+#about .box{float: left; height: 400px;}
+#about .box:nth-of-type(1){width: 50%; background: url('../img/bread-9.jpg') no-repeat center; background-size: cover;}
+#about .box:nth-of-type(2){width: 590px; padding: 80px; text-align: left; }
+#about .box:nth-of-type(2) .title{text-align: left;}
+#about .box:nth-of-type(2) .txt{text-align: left;}
+
+@media screen and (max-width:1200px){
+    #about .box:nth-of-type(2){width: 50%;}
+}
+@media screen and (max-width:980px){
+    #about .box:nth-of-type(2){padding: 60px;}
+}
+@media screen and (max-width:768px){
+    #about .box{height: 360px}
+    #about .box:nth-of-type(2){padding: 50px;}
+}
+@media screen and (max-width:640px){
+    
+    #about .box:nth-of-type(2){padding: 30px;}
+}
+@media screen and (max-width:480px){
+    
+    #about .box:nth-of-type(1){width: 100%}
+    #about .box:nth-of-type(2){width: 100%; height: auto;}
+}
+    
+  
+
+ /*------------ 바버 ------------*/      
+  
+#barber .box{position: relative; float: left; width: 376px; margin-right: 25px;}    
+#barber .box:last-of-type{margin-right: 0}
+
+#barber .box > div{width: 100%; height: 100%;}    
+
+#barber .box > .barber_pic{}    
+#barber .box > .barber_pic img{display: block; width: 100%;}    
+
+#barber .box > .barber_info{
+    position: absolute; left: 0; top: 0; 
+    background: rgba(0,0,0,0.2); color: antiquewhite; text-align: center; 
+    transition: 0.3s
+}    
+
+#barber .box > .barber_info .barber_name{
+    margin-top:  20%; font:bold 32px '맑은 고딕'; text-transform: uppercase; color: white;}    
+#barber .box > .barber_info .barber_icon{
+    margin: 16%; font-size: 48px; transform: scale(0); }    
+#barber .box > .barber_info .barber_txt{
+    margin-bottom: 10px; padding: 0 15%; opacity: 0; transition: 0.3s}    
+#barber .box > .barber_info .barber_sns>li{
+    display: inline-block; margin: 0 10px; opacity: 0; transition: 0.3s}    
+
+
+#barber .box:hover > .barber_info{background: rgba(0,0,0,0.7);}
+#barber .box:hover > .barber_info .barber_name{color: antiquewhite}
+#barber .box:hover > .barber_info .barber_icon{transform: scale(1);transition: 0.2s 0.4s cubic-bezier(.42,.71,.73,1.94)}
+#barber .box:hover > .barber_info .barber_txt{opacity: 1;}    
+#barber .box:hover > .barber_info .barber_sns>li{opacity: 1;}
+
+
+@media screen and (max-width:1200px){
+    
+    #barber .box{width: 31.333%; margin-right: 3%;} 
+    
+    #barber .box > .barber_info .barber_name{font-size: 28px}    
+    #barber .box > .barber_info .barber_icon{font-size: 44px; }    
+}
+
+@media screen and (max-width:980px){
+    
+    #barber .box > .barber_info .barber_name{margin-top: 10%; font-size: 24px}    
+    #barber .box > .barber_info .barber_icon{margin: 10%; font-size: 40px; }    
+    #barber .box > .barber_info .barber_txt{ padding: 0 10%; font-size: 14px;}    
+    
+}
+@media screen and (max-width:768px){
+    
+    #barber .box{width: 48.5%; margin-bottom: 20px;} 
+    #barber .box:nth-of-type(2n){margin-right: 0;}
+    #barber .box:nth-of-type(3){margin-right: 3%}   
+    
+    #barber .box > .barber_info .barber_name{margin-top: 18%; font-size: 28px}    
+    #barber .box > .barber_info .barber_icon{margin: 15%; font-size: 44px; }    
+     
+
+}
+@media screen and (max-width:640px){
+    #barber .box > .barber_info .barber_name{font-size: 24px}    
+    #barber .box > .barber_info .barber_icon{font-size: 40px;}    
+
+}
+@media screen and (max-width:560px){
+    #barber .box > .barber_info .barber_name{margin-top: 15%; font-size: 20px}    
+    #barber .box > .barber_info .barber_icon{margin: 12%; font-size: 36px;}    
+    #barber .box > .barber_info .barber_txt{padding: 0 5%; font-size: 12px;}    
+    
+}
+
+@media screen and (max-width:480px){
+    #barber .box{width: 100%;} 
+    #barber .box > .barber_info .barber_name{margin-top: 20%; font-size: 32px}    
+    #barber .box > .barber_info .barber_icon{margin: 16%; font-size: 48px; }    
+    #barber .box > .barber_info .barber_txt{padding: 0 10%; font-size: 16px;}    
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    

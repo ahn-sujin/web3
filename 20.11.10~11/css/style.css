@@ -1,0 +1,63 @@
+*{margin: 0; padding: 0; }
+ul, ol, li{list-style: none}
+a{text-decoration: none;}
+
+.content{ padding:100px 0; text-align: center;}
+.content .inner{width:1180px; margin: 0 auto;}
+.content .inner::after{content: ''; clear: both; display: block;}
+
+#con1 .type1{width:500px; border-spacing: 0; border-collapse: collapse;}
+#con1 .type1 th{background: #e0c0dd; color: #444;}
+#con1 .type1 tr:nth-of-type(even){background: #eee;}
+
+#con2 .type2{width:100%; border-spacing: 0; border-collapse: collapse;}
+#con2 .type2 th{background: #e0c0dd; color: #444;}
+#con2 .type2 tr:nth-of-type(even){background: #eee;}
+    
+#con3 .type3{width: 100%; border-spacing: 0; border-collapse: collapse;}
+#con3 .type3 th{background: #c0e0c4; color: #444;}
+#con3 .type3 th,
+#con3 .type3 td{border: 1px solid black;}
+
+@media screen and (max-width:768px){
+    .content{padding:40px 80px;}
+    .content .inner{width:100%;}
+
+    #con1 .type1{width:100%;}
+    #con1 .type1 colgroup,
+    #con1 .type1 thead{display: none;}
+
+    #con1 .type1 tr{border-top:1px solid#aaa;}
+    #con1 .type1 tr:last-of-type{border-bottom:1px solid #999;}
+
+    #con1 .type1 td{display: block; text-align: left; padding: 5px 0px;}
+
+    #con1 .type1 td:first-of-type,
+    #con1 .type1 td:last-of-type{display: table-cell; background: #ffd; text-align: center;}
+
+    #con1 .type1 td:nth-of-type(2) ~td{border-top: 1px dotted #aaa;}
+
+    #con1 .type1 td::before{padding-left:10px; width:100px; display: inline-block;}
+    #con1 .type1 td:nth-of-type(2)::before{content:'이름'}
+    #con1 .type1 td:nth-of-type(3)::before{content:'나이'}
+    #con1 .type1 td:nth-of-type(4)::before{content:'지역'}
+
+    #con2 .inner{width:100%; overflow: auto;}
+    #con2 .inner .type2{width:600px;}
+
+    #con3 .type3 colgroup{display: none;}
+    #con3 .type3 th, 
+    #con3 .type3 td{float:left; display: block;  }
+    #con3 .type3 th{width:40%;}
+    #con3 .type3 td{width:30%;}
+}
+
+    
+    
+    
+    
+    
+
+
+
+

@@ -1,0 +1,112 @@
+/* 탭메뉴 - 웹접근성 */
+
+
+*{box-sizing: border-box;}
+a{text-decoration: none;}
+
+html{font-size: 16px}
+::selection{background-color: firebrick; color: white;}
+
+#recipes {width: 100%; padding : 30px; background-color: rgb(245,238,232); }
+#recipes .inner{width: 1180px; margin: 0 auto;}
+#recipes h2{font: bold 24px '맑은 고딕'; color: #444}
+#recipes p{font: 16px '맑은 고딕'; color: #777}
+
+
+#recipes .wrap{position: relative; width: 100%; height: 500px; overflow: hidden;}
+
+#recipes .tab{position: relative; top: 40px; width: 100%;}
+#recipes .tab::after{clear: both; display: block; clear: both;}
+
+#recipes .tab > li {float: left; }
+#recipes .tab > li ::after{clear: both; display: block; clear: both;}
+
+#recipes .tab > li a.menu{float: left; display: block; padding: 0 30px;  text-align: center; cursor: pointer; color: #bc9d8f;}
+#recipes .tab > li a.menu span{display: inline-block; font: 1em/35px '맑은 고딕';}
+#recipes .tab > li a.menu:hover span,
+#recipes .tab > li a.menu:focus span,
+#recipes .tab > li.on a.menu span{border-bottom : 3px solid firebrick; color: firebrick; font-weight: bold}
+
+#recipes .tab > li .pannel{position: absolute; left: 0px; top: 100px; width: 100%;}
+#recipes .tab > li .pannel::after{content: ''; clear: both; display: block;}
+#recipes .tab > li .pannel > div{float: left; width: 50%; height: 260px;}
+#recipes .tab > li .pannel .pic{position: relative;  transform: translateX(-20%); opacity: 0; }
+#recipes .tab > li .pannel .pic img{display: block; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);}
+#recipes .tab > li .pannel .msg h2{margin-bottom: 0.625em; font: bold 2.25em '맑은 고딕'; color: #444; transform: translateX(20%); opacity: 0; }
+#recipes .tab > li .pannel .msg p:nth-of-type(1){margin-bottom: 1.7em; font: bold 1.25em '맑은 고딕'; color: firebrick; transform: translateX(20%); opacity: 0; }
+#recipes .tab > li .pannel .msg p:nth-of-type(2){margin-bottom: 1.7em; font: 1em '맑은 고딕'; color: #777; transform: translateX(20%); opacity: 0;}
+#recipes .tab > li .pannel .msg button{width: 120px; height: 2.5em; background-color: transparent; border: 1px solid firebrick; color: firebrick; transform: translateX(50%); opacity: 0; }
+
+
+#recipes .tab > li.on .pannel .pic{overflow: hidden; transform: translateX(0%); opacity: 1; transition: 0.5s 0s;}
+#recipes .tab > li.on .pannel .msg h2{transform: translateX(0%); opacity: 1; transition: 0.5s 0s;}
+#recipes .tab > li.on .pannel .msg p:nth-of-type(1){transform: translateX(0%); opacity: 1; transition: 0.5s 0.2s;}
+#recipes .tab > li.on .pannel .msg p:nth-of-type(2){transform: translateX(0%); opacity: 1; transition: 0.5s 0.4s;}
+#recipes .tab > li.on .pannel .msg button{transform: translateX(0%); opacity: 1; transition: 0.5s 0.6s;}
+
+
+
+
+@media screen and (max-width : 1200px){
+    
+    #recipes .inner{width: 100%;}
+}
+
+@media screen and (max-width : 768px){
+    
+    html{font-size: 15px;}
+    
+    #recipes h2{text-align: center;}
+    
+    #recipes .wrap{top: 20px;  height: 640px;}
+    #recipes .tab{top: 10px; padding-left: 13%;}
+    
+    #recipes .tab>li::after{content: ''; display: inline-block; width: 1px; height: .9em; margin-top: 1em; background: firebrick;}
+    #recipes .tab>li:last-of-type::after{display: none;}
+    
+    #recipes .tab > li .pannel{top: 80px;}
+    #recipes .tab > li .pannel > div{ width: 100%;}
+    #recipes .tab > li .pannel > .msg{padding: 2em; text-align: center; }
+    
+    #recipes .tab > li a.menu{padding : 0em 1.4em;}
+    
+    #recipes .tab > li a.menu:hover,
+    #recipes .tab > li a.menu:focus,
+    #recipes .tab > li.on a.menu{ background-color: rgba(178, 34, 34, 0.2); border-radius: 2px;}
+
+
+    
+}
+
+
+@media screen and (max-width : 640px){
+    html{font-size: 13px;}
+    #recipes .tab{top: 10px; padding-left: 16%;}
+    #recipes .tab > li a.menu{padding : 0em 1.5em;}
+    #recipes .tab > li .pannel .msg{padding: 1em; }  
+}
+
+@media screen and (max-width : 560px){
+   #recipes .tab{top: 10px; padding-left: 13%;}
+   #recipes .tab > li a.menu{padding : 0em 1em;} 
+}
+
+@media screen and (max-width : 480px){
+    
+    #recipes .wrap{top: 20px; }
+    #recipes h2{text-align: center;}
+    
+    #recipes .tab{padding-left: 10%;}
+    #recipes .tab>li a.menu{padding : 0em .55em; }
+
+    #recipes .tab > li .pannel .msg{padding: 2em 0em; }  
+    #recipes .tab > li .pannel .msg h2{font-size: 2em }
+    
+    
+}
+
+@media screen and (max-width : 375px){
+    #recipes .tab{padding-left: 0%;}
+    #recipes .tab > li .pannel .msg h2{font-size: 1.8em }
+    
+}

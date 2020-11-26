@@ -1,0 +1,26 @@
+/* Tab + List */
+.tab.list{height:160px}
+.tab.list ul{position:relative;margin:0;padding:0;list-style:none;border-bottom:1px solid #ccc;font-family:Tahoma, Sans-serif;font-size:12px;*zoom:1}
+.tab.list ul:after{content:"";display:block;clear:both}
+.tab.list li{float:left;margin-bottom:-1px}
+.tab.list li a{position:relative;float:left;text-decoration:none;border:1px solid #eee;border-bottom-color:#ccc;background:#fafafa;color:#666}
+.tab.list li a span{display:inline-block;padding:6px 25px 6px 25px;letter-spacing:-1px;cursor:pointer}
+.tab.list li ul{width:100%;position:absolute;top:40px;left:0;list-style:none;border:0;margin:0;padding:0;*zoom:1}
+.tab.list li ul:after{content:"";display:block;clear:both}
+.tab.list li li{float:none;position:relative;margin:0 0 8px 0;color:#999}
+.tab.list li li a{float:none;padding:0;margin:0;border:0 !important;color:#666 !important;font-weight:normal;background:transparent;letter-spacing:normal}
+.tab.list li li a:hover,
+.tab.list li li a:active,
+.tab.list li li a:focus{color:#000 !important;text-decoration:underline}
+.tab.list li li time,
+.tab.list li li .time{position:absolute;top:0;right:0;color:#767676}
+.tab.list li li.more{position:absolute;top:-30px;right:0;border:0 !important;background:transparent}
+.tab.list li.active a{border:1px solid #ccc;border-bottom:1px solid #fff;margin-top:-1px;background:transparent;color:#333}
+.tab.list li.active a span{padding-top:7px;font-weight:bold}
+.tab.list.jx{height:auto}
+.tab.list.jx ul{border:0}
+.tab.list.jx li{float:none;position:relative}
+.tab.list.jx li a{float:none;display:block;font-weight:bold;color:#333;border:1px solid #eee !important;border-bottom-color:#ccc !important;background:#fafafa !important}
+.tab.list.jx li ul{position:static;display:block;left:0;top:0;padding:5px 0}
+.tab.list.jx li li a{display:inline;border:0 !important;background:none !important;font-weight:normal}
+.tab.list.jx li li.more{top:7px;right:15px}
